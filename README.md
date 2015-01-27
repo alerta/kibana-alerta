@@ -3,6 +3,8 @@ Alerta-to-Kibana
 
 Forward Alerta alerts via Logstash to Elasticsearch for visualisation in Kibana3.
 
+![kibana](/docs/images/alerta-kibana3.png?raw=true)
+
 Installation
 ------------
 
@@ -43,7 +45,7 @@ output {
 
 Either configure a Kibana dashboard manually or load the example dashboard from this repo.
 
-    Menu -> Load -> Advanced -> Choose File
+    Menu -> Load -> Advanced -> Choose File -> alerta-kibana3-dashboard.json
 
 Testing
 -------
