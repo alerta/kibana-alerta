@@ -1,0 +1,86 @@
+[
+  {
+    "_id": "Alert-Histogram-with-Severity",
+    "_type": "visualization",
+    "_source": {
+      "title": "Alert Histogram with Severity",
+      "visState": "{\"title\":\"Alert Histogram with Severity\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Alerts per Minute\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Time\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"severity.raw\",\"size\":5,\"order\":\"asc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"critical\":\"#E24D42\",\"major\":\"#EF843C\",\"minor\":\"#F2C96D\",\"normal\":\"#447EBC\"},\"legendOpen\":true}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Total-Alarms",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total Alarms",
+      "visState": "{\"title\":\"Total Alarms\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"id.raw\",\"customLabel\":\"Unique Alerts\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Alert-Count-by-Client",
+    "_type": "visualization",
+    "_source": {
+      "title": "Alert Count by Client",
+      "visState": "{\"title\":\"Alert Count by Client\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":true,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"resource.raw\",\"customLabel\":\"Unique Resources With Alarms\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"service.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"json\":\"\",\"customLabel\":\"Service\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Alert-Type",
+    "_type": "visualization",
+    "_source": {
+      "title": "Alert Type",
+      "visState": "{\"title\":\"Alert Type\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"resource.raw\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"event.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Packet Loss\":\"#E0752D\",\"Outage\":\"#E24D42\",\"Avg Ping\":\"#E5AC0E\",\"Max Ping\":\"#F4D598\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Alerts-by-Severity",
+    "_type": "visualization",
+    "_source": {
+      "title": "Alerts by Severity",
+      "visState": "{\"title\":\"Alerts by Severity\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"severity.raw\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"critical\":\"#BF1B00\",\"major\":\"#E0752D\",\"normal\":\"#447EBC\",\"minor\":\"#EAB839\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "All-Events",
+    "_type": "visualization",
+    "_source": {
+      "title": "All Events",
+      "visState": "{\"title\":\"All Events\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"7\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"lastReceiveTime\",\"size\":500,\"order\":\"desc\",\"orderBy\":\"_term\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"service.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Service\"}},{\"id\":\"9\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"resource.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Resource\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"text.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Info\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Event\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"value.raw\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Value\"}},{\"id\":\"8\",\"type\":\"filters\",\"schema\":\"bucket\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"status: open\",\"analyze_wildcard\":true}}},\"label\":\"Open\"}]}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  }
+]
