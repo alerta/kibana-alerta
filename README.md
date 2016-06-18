@@ -1,7 +1,7 @@
 Alerta-to-Kibana
 ================
 
-Forward Alerta alerts via Logstash to Elasticsearch for visualisation in Kibana3.
+Forward Alerta alerts via Logstash to Elasticsearch for visualisation in Kibana.
 
 ![kibana](/docs/images/alerta-kibana3.png?raw=true)
 
@@ -45,7 +45,7 @@ output {
 
 Either configure a Kibana dashboard manually or load the example dashboard from this repo.
 
-    Menu -> Load -> Advanced -> Choose File -> alerta-kibana3-dashboard.json
+    Menu -> Load -> Advanced -> Choose File -> Dashboard.json
 
 Testing
 -------
@@ -75,5 +75,4 @@ Alternatively, make use of the [vagrant-try-alerta](https://github.com/alerta/va
 License
 -------
 
-Copyright (c) 2014 Nick Satterly. Available under the MIT License.
-
+Copyright (c) 2014,2016 Nick Satterly. Available under the MIT License.

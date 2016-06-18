@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "Alerta-Dashboard",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Alerta Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Alert-Histogram-with-Severity\",\"panelIndex\":1,\"row\":1,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Alert-Type\",\"panelIndex\":2,\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"Alert-Count-by-Client\",\"panelIndex\":4,\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"All-Events\",\"panelIndex\":5,\"row\":7,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Total-Alarms\",\"panelIndex\":6,\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"Alerts-by-Severity\",\"panelIndex\":7,\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{\"P-1\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}},\"vis\":{\"colors\":{\"critical\":\"#BF1B00\",\"major\":\"#E0752D\",\"minor\":\"#EAB839\",\"normal\":\"#447EBC\"}}},\"P-2\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}},\"vis\":{\"colors\":{\"Avg Ping\":\"#E5AC0E\",\"Max Ping\":\"#F4D598\",\"Outage\":\"#BF1B00\",\"Packet Loss\":\"#E0752D\"}}},\"P-4\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}}}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-4h",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  }
+]
