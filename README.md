@@ -17,7 +17,7 @@ Install the following packages:
 Configuration
 -------------
 
-Enable the `logstash` plug-in which is included in `alerta` by default:
+Install the `logstash` plug-in which can be found in the [contrib repo](https://github.com/alerta/alerta-contrib/tree/master/plugins/logstash). Then add it to the list of enabled `PLUGINS`:
 
 ```
 PLUGINS = ['reject','logstash']
